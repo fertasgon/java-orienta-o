@@ -2,10 +2,19 @@ package entities;
 
 public class Product
 {
-	 public String nome;
+	 public String name;
 	    public double price; 
 	    public int quantity;
-	   
+	    
+	    public Product()
+	    {}
+	    
+	    public Product(String name, double price, int quantity)
+	    {this.name = name; this.price = price; this.quantity = quantity;}
+	    
+	    public Product(String name, double price)
+	    {this.name = name; this.price = price;}
+	    
 	    public double totalValueInStock()
 	    {
 	    	return price * quantity;
@@ -20,7 +29,7 @@ public class Product
 	    }
 	    public String toString()
 	    {
-	    	return nome + ", $ " + String.format("%.2f", price) + ", " +
+	    	return name + ", $ " + String.format("%.2f", price) + ", " +
 			           + quantity + " un, " + "Total: $ " 
 	    			+ String.format("%.2f", totalValueInStock());
 	    }

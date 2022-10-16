@@ -13,23 +13,22 @@ public class Program {
 		
 		System.out.println("Enter product data:");
 		System.out.print("Name: ");
-		pro.nome = scan.nextLine();
+		String name = scan.nextLine();
 		System.out.print("Price: ");
-		pro.price = scan.nextDouble();
-		System.out.print("Quantity: ");
-		pro.quantity = scan.nextInt();
+		double price = scan.nextDouble();
+		Product product = new Product(name, price);
 		
-		System.out.println("Product data: " + pro);
+		System.out.println("Product data: " + product);
 		System.out.print("Enter the number of products to be added in stock: ");
 		int quantity = scan.nextInt();
-		pro.addProducts(quantity);
+		product.addProducts(quantity);
 
-		System.out.println("Update data: " + pro);
+		System.out.println("Update data: " + product);
 		System.out.print("Enter the number of products to be removed in stock: ");
 		quantity = scan.nextInt();
-		pro.removeProducts(quantity);
+		product.removeProducts(quantity);
 
-		System.out.println("Update data: " + pro);
+		System.out.println("Update data: " + product);
 		
         scan.close();
 
